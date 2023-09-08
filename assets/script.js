@@ -18,8 +18,13 @@ let hourBlock = $("timeblock");
 $(document).ready(function() {
 
 
-$(".saveBtn").on("click",function(){
-    
+$(".saveBtn").on("click",function() {
+   let timeID = $(this).parent().attr("id");
+   let value = $(this).siblings(".activity").val();
+   
+   console.log(timeID, value);
+//    console.log(value);
+   
 });
 
 });
