@@ -2,7 +2,15 @@ let today = dayjs().format("ddd D MMM YYYY");
 
 $("#currentDay").text(today)
 
-let currentTime = day.js().format("HH:mm:ss");
+let currentTime = dayjs().format("HH:mm:ss");
+
+let hourBlock = $("timeblock");
 
 
-if (time)
+if (hourBlock.val > currentTime[0]){
+    $(this).addClass('future');
+} else if (hourBlock.val<currentTime[0]){
+    $(this).addClass('past');  
+}else {
+    $(this).addClass('present')
+}
