@@ -24,7 +24,8 @@ $(".saveBtn").on("click",function() {
    
    console.log(timeID, value);
 //    console.log(value);
-   
+    localStorage.setItem(timeID, value);
+
 });
 
 });
