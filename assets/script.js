@@ -26,6 +26,15 @@ $(".saveBtn").on("click",function() {
 //    console.log(value);
     localStorage.setItem(timeID, value);
 
+$("#confirmation").addClass("show");
+
+setTimeout(function(){
+    $("#confirmation").removeClass("show")  }
+    , 3500 );
+})
+
+//video 19
+
 });
 
 });
