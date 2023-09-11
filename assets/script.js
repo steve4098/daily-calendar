@@ -29,11 +29,10 @@ setTimeout(function(){
 function hourUpdate(){ 
     let currentTime = dayjs().format("HH");
 
-    $("timeblock").each(function(){
-        let hourTime = parseInt($(".timeblock")[i].attr("id").split("-")[0]);
-        console.log(currentTime);
-
         for (let i=0; i<$("timeblock").length; i++){
+            let hourTime = parseInt($(".timeblock")[i].getAttribute("id").split("-")[0]);
+
+
             if (hourTime < currentTime){
                 $(".timeblock")[i].classList.add('past');
             } else if (hourTime === currentTime){
@@ -44,7 +43,9 @@ function hourUpdate(){
                 $(".timeblock")[i].classList.remove("present")
                 $(".timeblock")[i].classList.add('future');
             }};
-    });
+
+            console.log(currentTime);
+            console.log(hourTime);
 };
 
-
+hourUpdate();
