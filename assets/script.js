@@ -28,13 +28,12 @@ setTimeout(function(){
 // //current time called in hour
 function hourUpdate(){ 
     let currentTime = dayjs().format("HH");
-
+        
         for (let i=0; i<$("timeblock").length; i++){
-            let hourTime = parseInt($(".timeblock")[i].getAttribute("id").split("-")[0]);
-
-
+            let hourTime = parseInt($("timeblock")[i].getAttribute("id").split("-")[0]);
+            
             if (hourTime < currentTime){
-                $(".timeblock")[i].classList.add('past');
+              $(".timeblock")[i].classList.add('past');
             } else if (hourTime === currentTime){
                 $(".timeblock")[i].classList.remove("past")
                 $(".timeblock")[i].classList.add('present');  
@@ -43,10 +42,11 @@ function hourUpdate(){
                 $(".timeblock")[i].classList.remove("present")
                 $(".timeblock")[i].classList.add('future');
             }};
+            
 
 };
 
-// hourUpdate();
+hourUpdate();
 
 //data recalled fom local storage
 $("#9-AM .activity").val(localStorage.getItem("9-AM"));
