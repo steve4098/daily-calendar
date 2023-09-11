@@ -2,9 +2,6 @@
 let today = dayjs().format("ddd D MMM YYYY");
 $("#currentDay").text(today)
 
-//current time called in hour
-let currentTime = dayjs().format("HH");
-
 //function for save clicks
 $(document).ready(function() {
 
@@ -27,19 +24,27 @@ setTimeout(function(){
 
 });
 
-let hourBlock = $("timeblock");
-hourBlock.each(function(){
-    let hourTime = parseInt($(this).attr("id").split("-")[0]);
-    console.log(hourTime);
 
+//current time called in hour
+function hourUpdate(){ 
+    let currentTime = dayjs().format("HH");
 
-    for (let i=0; i<$("timeblock").length; i++){
-        if (hourTime > currentTime){
-            $("timeblock").addClass('.future');
-        } else if (hourTime < currentTime){
-            $("timeblock").addClass('.past');  
-        } else {
-            $("timeblock").addClass('.present')
-        }};
+    $("timeblock").each(function(){
+        let hourTime = parseInt($(".timeblock")[i].attr("id").split("-")[0]);
+        console.log(currentTime);
+
+        for (let i=0; i<$("timeblock").length; i++){
+            if (hourTime < currentTime){
+                $(".timeblock")[i].classList.add('past');
+            } else if (hourTime === currentTime){
+                $(".timeblock")[i].classList.remove("past")
+                $(".timeblock")[i].classList.add('present');  
+            } else {
+                $(".timeblock")[i].classList.remove("past")
+                $(".timeblock")[i].classList.remove("present")
+                $(".timeblock")[i].classList.add('future');
+            }};
     });
+};
+
 
