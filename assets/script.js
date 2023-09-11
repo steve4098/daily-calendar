@@ -44,8 +44,16 @@ function hourUpdate(){
                 $(".timeblock")[i].classList.add('future');
             }};
 
-            console.log(currentTime);
-            console.log(hourTime);
 };
 
 hourUpdate();
+
+$("#9-AM .activity").val(localStorage.getItem("9-AM"));
+$("#10-AM .activity").val(localStorage.getItem("10-AM"));
+$("#11-AM .activity").val(localStorage.getItem("11-AM"));
+$("#12-PM .activity").val(localStorage.getItem("12-PM"));
+$("#13-PM .activity").val(localStorage.getItem("13-PM"));
+$("#14-PM .activity").val(localStorage.getItem("14-PM"));
+$("#15-PM .activity").val(localStorage.getItem("15-PM"));
+$("#16-PM .activity").val(localStorage.getItem("16-PM"));
+$("#17-PM .activity").val(localStorage.getItem("17-PM"));
