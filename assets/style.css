@@ -71,3 +71,19 @@ header {
   transition: all 0.3s ease-in-out;
   color: black;
 }
+
+.confirmation {
+  display: none;
+  padding: 5px;
+  margin: 5px;
+  color: black; }
+
+.show {
+  display: block;
+  padding: 5px;
+  margin: 5px;
+  color: black;
+}
+
+
+
