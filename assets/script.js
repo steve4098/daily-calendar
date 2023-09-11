@@ -1,5 +1,5 @@
 //displays date in header of page
-let today = dayjs().format("ddd D MMM YYYY");
+let today = dayjs().format("dddd D MMMM YYYY");
 $("#currentDay").text(today)
 
 //function for save clicks
@@ -11,7 +11,7 @@ $(".saveBtn").on("click",function() {
    let value = $(this).siblings(".activity").val();
    
    console.log(timeID, value);
-//    console.log(value);
+
     localStorage.setItem(timeID, value);
 
 $(".confirmation").addClass("show");
@@ -25,7 +25,7 @@ setTimeout(function(){
 });
 
 
-//current time called in hour
+// //current time called in hour
 function hourUpdate(){ 
     let currentTime = dayjs().format("HH");
 
@@ -46,8 +46,9 @@ function hourUpdate(){
 
 };
 
-hourUpdate();
+// hourUpdate();
 
+//data recalled fom local storage
 $("#9-AM .activity").val(localStorage.getItem("9-AM"));
 $("#10-AM .activity").val(localStorage.getItem("10-AM"));
 $("#11-AM .activity").val(localStorage.getItem("11-AM"));
