@@ -27,19 +27,20 @@ setTimeout(function(){
 
 });
 
-let hourBlock = $(".timeblock");
+let hourBlock = $("timeblock");
 hourBlock.each(function(){
 
-    let hourTime = parseInt($(this).attr("id").split(" ")[0]);
+    let hourTime = parseInt($(this).attr("id").split("-")[0]);
     console.log(hourTime);
 })
 
-
-if (hourTime > currentTime){
-    $(this).addClass('future');
-} else if (hourTime < currentTime){
-    $(this).addClass('past');  
-}else {
-    $(this).addClass('present')
-}
+for (let i=0; i<$(".timeblock").length; i++){
+    if (hourTime > currentTime){
+    $(".timeblock").addClass('.future');
+    } else if (hourTime < currentTime){
+    $(".timeblock").addClass('.past');  
+    } else {
+    $(".timeblock").addClass('.present')
+    }
+};
 
