@@ -2,17 +2,8 @@
 let today = dayjs().format("ddd D MMM YYYY");
 $("#currentDay").text(today)
 
-//current time called in hour/minute/second
-let currentTime = dayjs().format("HH:mm:ss");
-let hourBlock = $("timeblock");
-
-// if (hourBlock.val > currentTime[0]){
-//     $(this).addClass('future');
-// } else if (hourBlock.val<currentTime[0]){
-//     $(this).addClass('past');  
-// }else {
-//     $(this).addClass('present')
-// }
+//current time called in hour
+let currentTime = dayjs().format("HH");
 
 //function for save clicks
 $(document).ready(function() {
@@ -35,3 +26,20 @@ setTimeout(function(){
 });
 
 });
+
+let hourBlock = $(".timeblock");
+hourBlock.each(function(){
+
+    let hourTime = parseInt($(this).attr("id").split(" ")[0]);
+    console.log(hourTime);
+})
+
+
+if (hourTime > currentTime){
+    $(this).addClass('future');
+} else if (hourTime < currentTime){
+    $(this).addClass('past');  
+}else {
+    $(this).addClass('present')
+}
+
